@@ -1,0 +1,155 @@
+﻿@model IEnumerable<Dominio.Advogados>
+
+@{
+    ViewBag.Title = "Advogados";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Advogados</h1>
+</div>
+
+<div class="row justify-content-center">
+   
+    <div class="col-11 col-md-10 div-container">
+
+        
+
+        <div class="col-12 justify-content-end text-right">
+            <button class="btn btn-secondary" onclick="Voltar()">Voltar</button>
+            <button class="btn btn-info"  onclick="Cadastrar()">Novo</button>
+        </div>
+        <div class="col-12 div-table justify-content-center">
+            <table class="table table-striped" id="tableAdvogado">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Senioridade</th>
+                        <th>Estado</th>
+                        <th>Cidade</th>
+                        <th>Bairro</th>
+                        <th>Cep</th>
+                        <th>Rua</th>
+                        <th>Senioridade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr data-idAdvogado="@item.Id">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Senioridade)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cidade)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Bairro)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cep)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rua)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Numero)
+                            </td>
+                            <td style="width: 80px;">
+                                <i class="pointer-event" onclick='editarAdvogado(this)'><img class='iconedit' src='~/Content/Icons/edit-2.svg' /></i>
+                                <i class="cursor-pointer" onclick='excluirAdvogado(this)'><img class='icondelete' src='~/Content/Icons/trash-2.svg' /></i>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" id="modal_cadastrar" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Advogado</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <input type="hidden" id="ipt_id"/>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="ipt_nome">Nome</label>
+                        <input type="text" class="form-control ipt_required" id="ipt_nome">
+                        <small class="form-text text-muted spn_requerid" style="display: none;">Campo Obrigatório</small>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="sltc_senioridade">Senioridade</label>
+                        <select type="text" class="form-control ipt_required" id="sltc_senioridade">
+                            <option value="0">Junior</option>
+                            <option value="1">Pleno</option>
+                            <option value="2">Sênior</option>
+                        </select>
+                        <small class="form-text text-muted spn_requerid " style="display: none;">Campo Obrigatório</small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="ipt_cep">CEP <i class="fas fa-sync-alt fa-spin cepLoad ml-1 d-none" style="color: #7E01FF;"></i> </label>
+                        <input type="number" class="form-control ipt_required" id="ipt_cep" max="8" placeholder="Digite um CEP valido">
+                        <small class="form-text text-muted spn_requerid " style="display: none;">Campo Obrigatório</small>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="ipt_numero">Numero</label>
+                        <input type="text" class="form-control ipt_required" id="ipt_numero">
+                        <small class="form-text text-muted spn_requerid " style="display: none;">Campo Obrigatório</small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-2">
+                        <label for="ipt_estado">Estado</label>
+                        <input type="text" class="form-control ipt_required" id="ipt_estado" disabled>
+                        <small class="form-text text-muted spn_requerid " style="display: none;">Campo Obrigatório</small>
+                    </div>
+                    <div class="form-group col-5">
+                        <label for="ipt_cidade">Cidade</label>
+                        <input type="text" class="form-control ipt_required" id="ipt_cidade" disabled>
+                        <small class="form-text text-muted spn_requerid " style="display: none;">Campo Obrigatório</small>
+                    </div>
+                    <div class="form-group col-5">
+                        <label for="ipt_bairro">Bairro</label>
+                        <input type="text" class="form-control ipt_required" id="ipt_bairro" disabled>
+                        <small class="form-text text-muted spn_requerid " style="display: none;">Campo Obrigatório</small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label for="ipt_rua">Rua</label>
+                        <input type="text" class="form-control ipt_required" id="ipt_rua" disabled>
+                        <small class="form-text text-muted spn_requerid " style="display: none;">Campo Obrigatório</small>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" onclick="Validar()">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/app/Advogados/Advogados.js"></script>

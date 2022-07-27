@@ -1,0 +1,12 @@
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\bin\Debug\Dominio.dll.config
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\bin\Debug\Dominio.dll
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\bin\Debug\Dominio.pdb
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\bin\Debug\EntityFramework.dll
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\bin\Debug\EntityFramework.xml
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\obj\Debug\Dominio.csproj.CopyComplete
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\obj\Debug\Dominio.dll
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\obj\Debug\Dominio.pdb
+C:\Users\simao\OneDrive\Área de Trabalho\MyLegal.Simao\MyLegal.SimaoRossy\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
